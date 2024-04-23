@@ -22,8 +22,9 @@ async function petsArea() {
     clone.querySelector(".pet-name").textContent = pet.name;
     clone.querySelector(".pet-description").textContent = pet.description;
     clone.querySelector(".pet-age").textContent = getPetAge(pet.birthYear);
+    const petPhotoSrc = pet.photo ? pet.photo : "images/fallback.jpg";
     const img = clone.querySelector(".pet-card-photo img");
-    img.setAttribute("src", pet.photo);
+    img.setAttribute("src", petPhotoSrc);
     img.setAttribute("alt", `A ${pet.species} named ${pet.name}`);
     wrapper.appendChild(clone);
   });
