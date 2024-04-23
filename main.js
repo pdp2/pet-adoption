@@ -20,9 +20,23 @@ async function petsArea() {
   petsData.forEach((pet) => {
     const clone = template.content.cloneNode(true);
     clone.querySelector(".pet-name").textContent = pet.name;
+    clone.querySelector(".pet-description").textContent = pet.description;
+    clone.querySelector(".pet-age").textContent = getPetAge(pet.birthYear);
+    const img = clone.querySelector(".pet-card-photo img");
+    img.setAttribute("src", pet.photo);
+    img.setAttribute("alt", `A ${pet.species} named ${pet.name}`);
     wrapper.appendChild(clone);
   });
   document.querySelector(".list-of-pets").appendChild(wrapper);
+}
+
+function getPetAge(birthYear) {
+  const age = new Date().getFullYear() - birthYear;
+  if (age < 1) {
+    return "Less than a year old";
+  }
+  const suffix = age === 1 ? "year" : "years";
+  return `${age} ${suffix} old`;
 }
 
 petsArea();
