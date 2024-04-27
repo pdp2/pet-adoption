@@ -19,6 +19,7 @@ async function petsArea() {
   const petsData = await petsResponse.json();
   petsData.forEach((pet) => {
     const clone = template.content.cloneNode(true);
+    clone.querySelector(".pet-card").setAttribute("data-species", pet.species);
     clone.querySelector(".pet-name").textContent = pet.name;
     clone.querySelector(".pet-description").textContent = pet.description;
     clone.querySelector(".pet-age").textContent = getPetAge(pet.birthYear);
@@ -49,8 +50,15 @@ allButtons.forEach((button) => {
 });
 
 function handleButtonClick(e) {
-  allButtons.forEach((button) => {
-    button.classList.remove("active");
-    e.target.classList.add("active");
+  allButtons.forEach((button) => button.classList.remove("active"));
+  e.target.classList.add("active");
+  const currentFilter = e.target.dataset.filter;
+  document.querySelectorAll(".pet-card").forEach((card) => {
+    const cardSpecies = card.dataset.species;
+    if (currentFilter === "all" || currentFilter === cardSpecies) {
+      card.style.display = "grid";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
