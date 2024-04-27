@@ -14,7 +14,7 @@ body {
 }
 
 .top-section-wrapper {
-  background-color: #001D37;
+  background-color: #001d37;
   padding-left: 16px;
   padding-right: 16px;
   overflow: hidden;
@@ -56,14 +56,15 @@ body {
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 600;
-  background-color: #475AFF;
-  border: 2px solid #475AFF;
+  background-color: #475aff;
+  border: 2px solid #475aff;
   color: white;
   text-decoration: none;
   padding: 13px 25px;
   border-radius: 1000px;
   /* Are there any other ways to achive a pill shape rather than using a very large px value? */
-  transition: background-color .3s ease-out, border .3s ease-out, color .3s ease-out;
+  transition: background-color 0.3s ease-out, border 0.3s ease-out,
+    color 0.3s ease-out;
 }
 
 .our-btn:hover {
@@ -78,7 +79,7 @@ body {
 
 .our-btn--outline:hover {
   background-color: white;
-  color: #475AFF;
+  color: #475aff;
   border: 2px solid white;
 }
 
@@ -88,7 +89,7 @@ body {
 
 .intro-feature {
   padding: 33px 25px;
-  border: 1px solid rgba(255, 255, 255, .24);
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .intro-feature p {
@@ -123,8 +124,8 @@ body {
 .circle {
   width: 617px;
   height: 617px;
-  background: #D660FF;
-  opacity: .85;
+  background: #d660ff;
+  opacity: 0.85;
   border-radius: 50%;
   filter: blur(150px);
   position: absolute;
@@ -135,8 +136,8 @@ body {
 .circle-two {
   width: 617px;
   height: 617px;
-  background: #6079FF;
-  opacity: .85;
+  background: #6079ff;
+  opacity: 0.85;
   border-radius: 50%;
   filter: blur(150px);
   position: absolute;
@@ -161,7 +162,7 @@ body {
 }
 
 .pet-filter {
-  color: #9F9F9F;
+  color: #9f9f9f;
   font-size: 1.15rem;
 }
 
@@ -170,12 +171,23 @@ body {
   border: none;
   font-family: "Source Sans 3", sans-serif;
   font-size: 1.15rem;
-  color: #9F9F9F;
+  color: #9f9f9f;
+  cursor: pointer;
+}
+
+.pet-filter button:hover {
+  color: #707070;
+}
+
+.pet-filter .active,
+.pet-filter .active:hover {
+  color: #475aff;
+  text-decoration: underline;
 }
 
 .site-footer p {
-  color: #A6A6A6;
-  font-size: .875rem;
+  color: #a6a6a6;
+  font-size: 0.875rem;
   margin: 0;
   padding: 0 0 65px 0;
   text-align: center;
@@ -220,7 +232,7 @@ body {
 }
 
 .pet-description {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin: 0 0 1rem 0;
   color: #626262;
   line-height: 150%;
@@ -228,7 +240,7 @@ body {
 
 .pet-age {
   color: #a2a2a2;
-  font-size: .85rem;
+  font-size: 0.85rem;
   margin: 0;
 }
 
