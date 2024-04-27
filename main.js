@@ -41,3 +41,16 @@ function getPetAge(birthYear) {
 }
 
 petsArea();
+
+// Filter buttons
+const allButtons = document.querySelectorAll(".pet-filter button");
+allButtons.forEach((button) => {
+  button.addEventListener("click", handleButtonClick);
+});
+
+function handleButtonClick(e) {
+  allButtons.forEach((button) => {
+    button.classList.remove("active");
+    e.target.classList.add("active");
+  });
+}
